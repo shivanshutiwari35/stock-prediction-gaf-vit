@@ -1,0 +1,9 @@
+yfinance
+pandas
+pyts
+matplotlib
+scikit-learn
+torch
+torchvision
+timm
+transformers

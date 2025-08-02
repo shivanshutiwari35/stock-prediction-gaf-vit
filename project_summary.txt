@@ -1,0 +1,38 @@
+Project: Time-Series as Texture (GAF + ViT)
+
+Status as of: 2025-08-02
+
+Completed Steps:
+
+1.  **Project Setup:**
+    - Created the full directory structure as specified in the project PDF.
+    - Initialized all necessary Python script files (fetch_data.py, label_generator.py, etc.).
+
+2.  **Step 1: Data Collection (Proof-of-Concept):**
+    - Successfully downloaded 1 year of sample data for AAPL, MSFT, TSLA, and ^NSEI.
+    - Saved the raw data to `data/raw_stock_data.csv`.
+
+3.  **Step 2: Label Generation (Proof-of-Concept):**
+    - Processed the raw AAPL data to generate binary labels (up/down) based on a 3-day future price change.
+    - Saved the result to `data/labeled_aapl_data.csv`.
+
+4.  **Step 3: GAF Image Transformation (Proof-of-Concept):**
+    - Converted the labeled AAPL data into GAF images (30x30).
+    - Split the images into `gaf_images/train` (171 images) and `gaf_images/test` (22 images).
+
+5.  **Step 4: Dataset Class:**
+    - Implemented a PyTorch `GAFDataset` class in `src/dataset.py` to load the images for training.
+
+6.  **Step 5: Model Training (Proof-of-Concept):**
+    - Trained (fine-tuned) a `google/vit-base-patch16-224` model on the small AAPL dataset.
+    - **Observation:** The model showed signs of learning but suffered from severe overfitting due to the small dataset size. Test accuracy was highly unstable.
+    - The trained model was saved to `models/vit_model.pth`.
+
+7.  **Step 6: Inference & Debugging:**
+    - Created an `inference.py` script to test the model on recent data.
+    - Encountered a persistent `IndentationError` and data type ambiguity error during the GAF transformation process in the inference script, indicating a need for more robust data handling.
+
+Next Action Plan:
+-   **Halt Inference Debugging:** Pause work on the `inference.py` script.
+-   **Expand Dataset:** Modify `fetch_data.py` to download a much larger and more diverse dataset as per user request (20 years of data for 10 Indian stocks).
+-   **Retrain Model:** Once the new dataset is prepared (labeled and converted to GAF images), the next step will be to retrain the Vision Transformer on this larger dataset to achieve stable and meaningful results.
