@@ -46,7 +46,7 @@ if __name__ == '__main__':
     end_date = '2025-08-01'
     
     # Define the output directory
-    output_directory = 'D:/GOLDMAN SACHS PROJECT/gaf-vitrade/data/indian_stocks/'
+    output_directory = 'D:/gaf-vitrade/data/indian_stocks/'
 
     fetch_data(indian_tickers, start_date, end_date, output_directory)
 
