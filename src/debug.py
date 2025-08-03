@@ -8,7 +8,7 @@ def debug_single_ticker_gaf():
     try:
         # 1. Load the data
         print("--- Loading Data ---")
-        labeled_data = pd.read_csv('D:/GOLDMAN SACHS PROJECT/gaf-vitrade/data/labeled_indian_stocks.csv', index_col=0)
+        labeled_data = pd.read_csv('D:/gaf-vitrade/data/labeled_indian_stocks.csv', index_col=0)
         print("Data loaded successfully.")
         print("Data columns:", labeled_data.columns)
         print("Data head:\n", labeled_data.head())
