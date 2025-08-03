@@ -9,11 +9,7 @@ class GAFDataset(Dataset):
     A PyTorch Dataset for loading GAF images.
     """
     def __init__(self, root_dir, transform=None):
-        """
-        Args:
-            root_dir (str): The root directory of the dataset (e.g., 'gaf_images/train').
-            transform (callable, optional): Optional transform to be applied on a sample.
-        """
+
         self.root_dir = root_dir
         self.transform = transform
         self.classes = sorted(os.listdir(root_dir))
@@ -47,8 +43,8 @@ if __name__ == '__main__':
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
 
-    train_dataset = GAFDataset(root_dir='D:/GOLDMAN SACHS PROJECT/gaf-vitrade/gaf_images/train', transform=transform)
-    test_dataset = GAFDataset(root_dir='D:/GOLDMAN SACHS PROJECT/gaf-vitrade/gaf_images/test', transform=transform)
+    train_dataset = GAFDataset(root_dir='D:/gaf-vitrade/gaf_images/train', transform=transform)
+    test_dataset = GAFDataset(root_dir='D:/gaf-vitrade/gaf_images/test', transform=transform)
 
     print(f"Train dataset size: {len(train_dataset)}")
     print(f"Test dataset size: {len(test_dataset)}")
