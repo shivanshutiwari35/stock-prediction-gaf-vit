@@ -95,4 +95,4 @@ if __name__ == '__main__':
     model = ViTForImageClassification.from_pretrained('google/vit-base-patch16-224', num_labels=len(train_dataset.classes), ignore_mismatched_sizes=True)
 
     # Train the model
-    train_model(model, train_loader, test_loader, EPOCHS, LEARNING_RATE, device, model_save_dir='D:/GOLDMAN SACHS PROJECT/gaf-vitrade/models')
+    train_model(model, train_loader, test_loader, EPOCHS, LEARNING_RATE, device, model_save_dir='D:/gaf-vitrade/models')
