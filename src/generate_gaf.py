@@ -44,7 +44,7 @@ def create_gaf_images_for_ticker(data, ticker_name, window_size, image_size, bas
 
 if __name__ == '__main__':
     # Load the consolidated labeled data
-    labeled_data = pd.read_csv('D:/GOLDMAN SACHS PROJECT/gaf-vitrade/data/labeled_indian_stocks.csv', index_col=0)
+    labeled_data = pd.read_csv('D:gaf-vitrade/data/labeled_indian_stocks.csv', index_col=0)
 
     # Group data by ticker
     grouped = labeled_data.groupby('ticker')
@@ -52,8 +52,8 @@ if __name__ == '__main__':
     print(f"Processing data for {len(grouped)} tickers.")
 
     # Define base output directories
-    train_dir = 'D:/GOLDMAN SACHS PROJECT/gaf-vitrade/gaf_images/train'
-    test_dir = 'D:/GOLDMAN SACHS PROJECT/gaf-vitrade/gaf_images/test'
+    train_dir = 'D:/gaf-vitrade/gaf_images/train'
+    test_dir = 'D:/gaf-vitrade/gaf_images/test'
 
     # Clear out old images
     for directory in [train_dir, test_dir]:
