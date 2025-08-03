@@ -2,16 +2,7 @@ import pandas as pd
 import os
 
 def generate_labels(data, horizon=3):
-    """
-    Generates labels for time-series data based on future price changes.
 
-    Args:
-        data (pandas.DataFrame): The input time-series data with a 'Close' column.
-        horizon (int): The number of days to look ahead for price changes.
-
-    Returns:
-        pandas.DataFrame: A DataFrame with an additional 'label' column.
-    """
     # Calculate the future price and generate the label
     data['label'] = (data['Close'].shift(-horizon) > data['Close']).astype(int)
     # Drop the rows where the label cannot be calculated (the last `horizon` rows)
@@ -19,8 +10,8 @@ def generate_labels(data, horizon=3):
     return data
 
 if __name__ == '__main__':
-    input_dir = 'D:/GOLDMAN SACHS PROJECT/gaf-vitrade/data/indian_stocks/'
-    output_file = 'D:/GOLDMAN SACHS PROJECT/gaf-vitrade/data/labeled_indian_stocks.csv'
+    input_dir = 'D:/gaf-vitrade/data/indian_stocks/'
+    output_file = 'D:/gaf-vitrade/data/labeled_indian_stocks.csv'
     
     all_labeled_data = []
 
