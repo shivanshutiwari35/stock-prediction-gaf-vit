@@ -85,8 +85,8 @@ if __name__ == '__main__':
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
 
-    train_dataset = GAFDataset(root_dir='D:/GOLDMAN SACHS PROJECT/gaf-vitrade/gaf_images/train', transform=transform)
-    test_dataset = GAFDataset(root_dir='D:/GOLDMAN SACHS PROJECT/gaf-vitrade/gaf_images/test', transform=transform)
+    train_dataset = GAFDataset(root_dir='D:/gaf-vitrade/gaf_images/train', transform=transform)
+    test_dataset = GAFDataset(root_dir='D:/gaf-vitrade/gaf_images/test', transform=transform)
 
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
